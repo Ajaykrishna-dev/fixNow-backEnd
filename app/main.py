@@ -23,6 +23,10 @@ def get_db():
     finally:
         db.close()
 
+@app.get("/",)
+def read_root():
+    return {"message": "Welcome to fixNow backEnd"}
+
 @app.post("/providers/", response_model=schemas.ServiceProvider)
 def register_provider(provider: schemas.ServiceProviderCreate, db: Session = Depends(get_db)):
     return crud.create_service_provider(db, provider)
