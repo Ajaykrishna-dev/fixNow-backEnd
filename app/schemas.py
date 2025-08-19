@@ -1,8 +1,10 @@
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, EmailStr
 
 class ServiceProviderBase(BaseModel):
     full_name: str = Field(alias="fullName")
     phone_number: str = Field(alias="phoneNumber")
+    email: EmailStr
+    password: str = Field(..., min_length=8) 
     service_type: str = Field(alias="serviceType")
     business_name: str = Field(default="", alias="businessName")
     address: str

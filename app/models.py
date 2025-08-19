@@ -7,6 +7,8 @@ class ServiceProvider(Base):
     id = Column(Integer, primary_key=True, index=True)
     full_name = Column(String, nullable=False)
     phone_number = Column(String, nullable=False)
+    email = Column(String, nullable=False)
+    password = Column(String, nullable=False)
     service_type = Column(String, nullable=False)
     business_name = Column(String)
     address = Column(String, nullable=False)
