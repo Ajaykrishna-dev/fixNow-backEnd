@@ -1,0 +1,17 @@
+version: "3.9"
+
+services:
+  fastapi-app:
+    build: .
+    container_name: fixnow-backend
+    restart: always
+    env_file:
+      - .env
+    ports:
+      - "8000:8000"
+    networks:
+      - fixnow-network
+
+networks:
+  fixnow-network:
+    external: true
