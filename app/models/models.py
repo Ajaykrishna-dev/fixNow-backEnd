@@ -14,7 +14,7 @@ class FixNowUser(Base):
     full_name = Column(String, nullable=False)
     phone_number = Column(String, nullable=True)   # optional for service users
     email = Column(String, unique=True, nullable=False)
-    role = Column(String, nullable=False)          # "service_provider" or "service_user"
+    role = Column(String, nullable=False)      
 
     # Only for service providers
     service_type = Column(ARRAY(String))

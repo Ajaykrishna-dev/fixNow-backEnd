@@ -5,7 +5,6 @@ from typing import Optional, List
 class FixNowUserBase(BaseModel):
     full_name: str = Field(alias="fullName")
     email: EmailStr
-    password: str = Field(..., min_length=8)
     role: str  # "service_provider" or "service_user"
 
     # Optional fields (for service providers)
@@ -21,12 +20,12 @@ class FixNowUserBase(BaseModel):
 
     class Config:
         populate_by_name = True
-        allow_population_by_field_name = True
+        validate_by_name = True
 
 
 # Schema for creating a new user
 class FixNowUserCreate(FixNowUserBase):
-    pass
+    password: str = Field(..., min_length=8)
 
 
 # Schema for returning user data (from DB)
@@ -37,4 +36,4 @@ class FixNowUser(FixNowUserBase):
     class Config:
         from_attributes = True
         populate_by_name = True
-        allow_population_by_field_name = True
+        validate_by_name = True

@@ -40,7 +40,7 @@ def list_providers(db: Session = Depends(get_db)):
 
 @app.post("/providers/", response_model=schemas.FixNowUser)
 def register_provider(provider: schemas.FixNowUserCreate, db: Session = Depends(get_db)):
-    return crud.create_user_with_role(provider, "service_provider", db)
+    return crud.create_user_with_role(provider, "service_providers", db)
 
 
 @app.post("/users/", response_model=schemas.FixNowUser)
