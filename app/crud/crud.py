@@ -88,6 +88,8 @@ def create_user_with_role(user_data: schemas.FixNowUserCreate, role: str, db: Se
             hourly_rate=user_data.hourly_rate,
             description=user_data.description,
             experience=user_data.experience,
+            latitude=user_data.latitude,
+            longitude=user_data.longitude
         )
 
         db.add(db_user)

@@ -1,4 +1,4 @@
-from sqlalchemy import Column, Integer, String, Boolean
+from sqlalchemy import Column, Integer, String, Boolean, Float
 from sqlalchemy.dialects.postgresql import ARRAY
 from ..db.database import Base
 
@@ -20,6 +20,8 @@ class FixNowUser(Base):
     service_type = Column(ARRAY(String))
     business_name = Column(String, nullable=True)
     address = Column(String, nullable=True)
+    latitude = Column(Float, nullable=True)  
+    longitude = Column(Float, nullable=True) 
     available_hours = Column(String, nullable=True)
     emergency_support = Column(Boolean, default=False)
     hourly_rate = Column(Integer, nullable=True)

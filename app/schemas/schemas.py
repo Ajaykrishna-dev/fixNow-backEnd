@@ -12,6 +12,8 @@ class FixNowUserBase(BaseModel):
     service_type: Optional[List[str]] = Field(default=None, alias="serviceTypes")
     business_name: Optional[str] = Field(default=None, alias="businessName")
     address: Optional[str] = None
+    latitude: Optional[float] = None  
+    longitude: Optional[float] = None 
     available_hours: Optional[str] = Field(default=None, alias="availableHours")
     emergency_support: Optional[bool] = Field(default=False, alias="emergencySupport")
     hourly_rate: Optional[int] = Field(default=None, alias="hourlyRate")
