@@ -29,8 +29,8 @@ jobs:
           git pull origin main || exit
     
           echo "Rebuilding and restarting Docker container..."
-          docker-compose down || exit
-          docker-compose up -d --build || exit
+          sudo docker-compose down || exit
+          sudo docker-compose up -d --build || exit
     
           echo "Deployment complete!"
         EOF
